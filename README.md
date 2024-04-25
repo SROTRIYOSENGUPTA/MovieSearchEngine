@@ -1,7 +1,7 @@
-Overview
-The goal of this assignment is to implement a separate-chaining hash table that stores movie’s titles and descriptions that allows fast search of words from movie descriptions.
+Overview:
+The goal of this Project is to implement a separate-chaining hash table that stores movie’s titles and descriptions that allows fast search of words from movie descriptions.
 
-We will use the hash table to search for words in the description of movies. The search returns the movie titles where both words appear in the description. For example, using the given input data file, if the searched words are “tragic” and “love” the search returns the following 4 movie titles: Anders als die andern, Namus, La rosa sulle rotaie, Sangue gitano. 
+The hash table is used here to search for words in the description of movies. The search returns the movie titles where both words appear in the description. For example, using the given input data file, if the searched words are “tragic” and “love” the search returns the following 4 movie titles: Anders als die andern, Namus, La rosa sulle rotaie, Sangue gitano. 
 
 Implementation
 We start with an input file that contains movies’ titles and short descriptions. The title as well as the description of a movie may contain one or more words.
@@ -12,7 +12,7 @@ The hash table uses chaining to resolve collisions, meaning that each hash table
 
 ![image](https://github.com/SROTRIYOSENGUPTA/RUMDb-Search-Engine/assets/69280834/9d5aaf32-af1e-426e-890e-ef6eb4bb03c6)
 
-n this example, the hash table size is 8 and the it contains 5 words. Each table index holds the front to a linked list of WordOccurrences.
+In this example, the hash table size is 8 and the it contains 5 words. Each table index holds the front to a linked list of WordOccurrences.
 
 A WordOccurrence (red box) holds the word and an ArrayList of Locations. For example, the WordOccurrence containing Word5 tells us that word5 is present at the descriptions of movies with title 7 at position 2, title 6 at positions 3 and 7.
 
@@ -22,9 +22,8 @@ Overview of files
 Location class holds the position of one word in a movie’s description. A movie’s description first word has position 1, the second word has position 2, and so on.
 WordOccurrence class represents all the occurrences of a word in the entire movie database.
 MovieSearchResult class represents the result of the search for two words. The searched words will belong to the same file.
-RUMdbSearchEngine class contains some provided methods in addition to annotated method signatures for all the methods you are expected to fill in. You will write your solutions in this file, and it is the file which will be submitted for grading.
-Driver class, which you can run to test any of your methods. Feel free to edit this class, as it is provided only to help you test. It is not submitted and it is not used to grade your code.
-StdIn and StdOut, which are used by the driver, provided methods, and some of your implemented methods as well. Do not edit these classes.
+RUMdbSearchEngine class contains some methods in addition to annotated method signatures for all the methods you are expected to fill in. 
+Driver class,here is used to run to test any of the methods. 
 data.txt, contains input data.
 dataSample.txt, contains a small sample of data.txt. Used on the examples below.
-noisewords.txt, contains a list of “noise” words, one per line. Noise words are commonplace words (such as “the”) that must be ignored by the search engine. You will use this file (and this file ONLY) to filter out noise words from the documents you read, when gathering keywords.
+noisewords.txt, contains a list of “noise” words, one per line. Noise words are commonplace words (such as “the”) that must be ignored by the search engine. 
