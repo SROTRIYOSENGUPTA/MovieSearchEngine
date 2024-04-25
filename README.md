@@ -22,7 +22,7 @@ Overview of files
 Location class holds the position of one word in a movie’s description. A movie’s description first word has position 1, the second word has position 2, and so on.
 WordOccurrence class represents all the occurrences of a word in the entire movie database.
 MovieSearchResult class represents the result of the search for two words. The searched words will belong to the same file.
-RUMdbSearchEngine class contains some methods in addition to annotated method signatures for all the methods you are expected to fill in. 
+RUMdbSearchEngine class contains some methods in addition to annotated method signatures for all the methods.
 Driver class,here is used to run to test any of the methods. 
 data.txt, contains input data.
 dataSample.txt, contains a small sample of data.txt. Used on the examples below.
