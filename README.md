@@ -29,7 +29,7 @@ dataSample.txt, contains a small sample of data.txt. Used on the examples below.
 noisewords.txt, contains a list of “noise” words, one per line. Noise words are commonplace words (such as “the”) that must be ignored by the search engine. 
 
 RUMDbSearchEngine.java
-Methods provided to you:
+Methods in this class
 
 constructor, that initializes instance variables and inputs noise words from file.
 hashFunction, that is used to map a word to an index into the hash table.
@@ -39,30 +39,21 @@ The method returns an ArrayList of ArrayList of Strings where each inner ArrayLi
 isWord, which given a word returns the word stripped of any trailing punctuation or null if the word is a noise word.
 print, which prints the entire hash table.
 
-Methods to be implemented by you:
-rehash
-Rehashes the hash table to newHashSize.
+rehash, Rehashes the hash table to newHashSize.
 Rehash happens when the load factor is greater than the threshold.
 The load factor is the ratio wordCount : hashSize.
-getWordOccurrence
-Searches the hash table for the WordOccurrence object containing the target word.
-Returns the WordOccurrence object containing the target word, or null otherwise.
-insertWordLocation
-This method inserts a Location object into the hash table.
-Use getWordOccurrence() to check if the word is present in the hash table.
+getWordOccurrence, Searches the hash table for the WordOccurrence object containing the target word. Returns the WordOccurrence object containing the target word, or null otherwise.
+insertWordLocation, This method inserts a Location object into the hash table. Use getWordOccurrence() to check if the word is present in the hash table.
 If the word is present, insert location into the matching WordOccurrence object.
 If the word is not present create a new WordOccurrence object and insert location into it, then insert WordOccurrence into the hash table.
 In the image above a red box is a WordOccurrence, a blue box is a word Location.
 Each hash table index holds the front of a linked list of WordOccurrence.
-Insert a new WordOccurence at the beginning of the linked list.
-Rehash if the load factor becomes greater than threshold. When rehashing, double the length of the array.
-insertMoviesIntoHashTable
-Implement this method to read the input text file and insert its movies into the hash table.
-Use the method readInputFile() to read the input file and use its output to insert the words into the hash table.
-Use isWord() to discard noise words, remove trailing punctuation, and to transform the word into all lowercase character. The hash table will contain all lowercase words.
-Use insertWordLocation() to insert the word into the hash table.
-This method must be implemented correctly for you to receive any credit in this assignment.
-Once the previous methods have been written you can test using the driver and dataSample.txt provided. The output is shown below.
+Insert a new WordOccurence at the beginning of the linked list. Rehash if the load factor becomes greater than threshold. When rehashing, double the length of the array.
+insertMoviesIntoHashTable, This method reads the input text file and insert its movies into the hash table. ReadInputFile() reads the input file and uses its output to insert the words into the hash table.
+Use isWord() discards noise words, removes trailing punctuation, and transforms the word into all lowercase character. The hash table contains all lowercase words.
+InsertWordLocation() inserts the word into the hash table.
+
+These methods are tested using driver and dataSample.txt. The output is shown below.
 
 Note that the word madame (at table index 3) is present in the descriptions whose titles are “madame dubarry” and “la ragazza con la cappelliera”. At “madame dubarry” madame appears as the 4th word in the description and at “la ragazza con la cappelliera” the word appears twice as the 14th and the 16th words.
 
@@ -75,13 +66,11 @@ The searched words “tragic” and “love” are not present in the database.
 createMovieSearchResult
 Creates and returns an ArrayList of MovieSearchResult objects.
 A MovieSearchResult refers to one movie. It contains all the locations of wordA and wordB within the movie’s description.
-DO NOT compute the minimum distance between two locations of wordA and wordB at this point. See next method.
 Returns null if one or both words are not present in the hash table.
 calculateMinDistance
 Computes the minimum distance between the two words, wordA and wordB, in a MovieSearchResult object.
 Updates the MovieSearchResult with the computed minimum distance.
 Recall that a MovieSearchResult refers to ONE movie. Therefore, this method is computing how close these two words appear in the description.
-See an example algorithm to compute the minimum distance in the Java file.
 topTenSearch
 This method’s purpose is to search the movie database to find movies that contain two words (wordA and wordB) in their description.
 The method searches and returns the top 10 movies where two words (wordA and wordB) appear closer together in the descriptions.
